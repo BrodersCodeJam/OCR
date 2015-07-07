@@ -18,8 +18,8 @@ namespace OcrParseTests
 
 
 
-            //TextToParse = File.ReadAllText(@"../../Standard; OTP.txt");
-            TextToParse = OcredDataFromABBYY.RealOcredData;
+            TextToParse = File.ReadAllText(@"../../Standard OTP.txt");
+            //TextToParse = OcredDataFromABBYY.RealOcredData;
             OcrParser = new OCRParser();
 
             //var result = ocrParser.GetPropertyInfo(text);
@@ -60,12 +60,12 @@ namespace OcrParseTests
 
             var result = OcrParser.GetCustomerInfo(TextToParse);
 
-            Assert.IsTrue(result.Count == 3);
-            Assert.IsTrue(result["fullname"].ToLower() == "".ToLower());
-          
-            Assert.IsTrue(result["idnumber"].ToLower() == "1 000 000".ToLower());
-            Assert.IsTrue(result["dateofbirth"].ToLower() == "1 000 000".ToLower());
-            Assert.IsTrue(result["address"].ToLower() == "1 000 000".ToLower());
+            Assert.IsTrue(result.Count == 4);
+            Assert.IsTrue(result["fullname"].ToLower() == "Peter Cousins".ToLower());
+
+            Assert.IsTrue(result["idnumber"].ToLower() == "8111095005085".ToLower());
+            Assert.IsTrue(result["dateofbirth"].ToLower() == "09/11/1981".ToLower());
+            Assert.IsTrue(result["address"].ToLower() == "Test Address".ToLower());
             
         }
     }

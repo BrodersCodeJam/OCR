@@ -34,7 +34,7 @@ namespace OCRParse
 
             results.Add("purchaseprice".ToLower(), Substring(parsetext, "The purchase price shall be R ", "payable as follows:").Trim());
             results.Add("depositamount".ToLower(), Substring(parsetext, "2.1.    R ", "within 30 days of").Trim());
-            results.Add("loanamount".ToLower(), Substring(parsetext, " financial institution approving a loan to the Purchaser, for ", "on its standard terms and conditions").Trim());
+            results.Add("loanamount".ToLower(), Substring(parsetext, "approving a loan to the Purchaser, for ", "on its standard terms and conditions").Trim());
 
 
 

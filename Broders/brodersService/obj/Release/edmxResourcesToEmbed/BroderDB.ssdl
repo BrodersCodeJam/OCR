@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="broders_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ApplicationHistory">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_ApplicationID" Type="int" Nullable="false" />
+    <Property Name="FK_StatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Applications">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_CustomerID" Type="int" Nullable="false" />
+    <Property Name="Deed" Type="varchar(max)" />
+    <Property Name="Area" Type="varchar(max)" />
+    <Property Name="Address" Type="varchar(max)" />
+    <Property Name="PurchasePrice" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DepositAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LoanAmount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OccupationalDate" Type="datetime" />
+    <Property Name="OccupationalRent" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="OTPExpiryDate" Type="datetime" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ApplicationStatus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Description" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_DigitalId" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="varchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="varchar(max)" Nullable="false" />
+    <Property Name="IsSBCustomer" Type="bit" Nullable="false" />
+    <Property Name="TotalSalary" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TotalExpenses" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="IDNumber" Type="varchar(max)" />
+    <Property Name="IncomeTaxNumber" Type="varchar(max)" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Cellnumber" Type="varchar(max)" />
+    <Property Name="Relationship" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="DigitalIdPropertyLinks">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_PropertyId" Type="int" Nullable="false" />
+    <Property Name="FK_DigitalId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DigitalIds">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Password" Type="varchar(max)" Nullable="false" />
+    <Property Name="Username" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Documents">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FK_ApplicationID" Type="int" Nullable="false" />
+    <Property Name="DocumentData" Type="varbinary(max)" Nullable="false" />
+    <Property Name="DocumentTitle" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="PropertyInfo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Street" Type="varchar(max)" Nullable="false" />
+    <Property Name="Suburb" Type="varchar(max)" Nullable="false" />
+    <Property Name="City" Type="varchar(max)" Nullable="false" />
+    <Property Name="Province" Type="varchar(max)" Nullable="false" />
+    <Property Name="Url" Type="varchar(max)" Nullable="false" />
+    <Property Name="GpsCoords" Type="geography" />
+  </EntityType>
+  <Association Name="FK_Application_0">
+    <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="1" />
+    <End Role="Applications" Type="Self.Applications" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CustomerInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Applications">
+        <PropertyRef Name="FK_CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationHistory_0">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+    <End Role="ApplicationHistory" Type="Self.ApplicationHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ApplicationHistory">
+        <PropertyRef Name="FK_ApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ApplicationHistory_1">
+    <End Role="ApplicationStatus" Type="Self.ApplicationStatus" Multiplicity="1" />
+    <End Role="ApplicationHistory" Type="Self.ApplicationHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationStatus">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ApplicationHistory">
+        <PropertyRef Name="FK_StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CustomerInfo_0">
+    <End Role="DigitalIds" Type="Self.DigitalIds" Multiplicity="1" />
+    <End Role="CustomerInfo" Type="Self.CustomerInfo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DigitalIds">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="CustomerInfo">
+        <PropertyRef Name="FK_DigitalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DigitalIdPropertyLink_0">
+    <End Role="PropertyInfo" Type="Self.PropertyInfo" Multiplicity="1" />
+    <End Role="DigitalIdPropertyLinks" Type="Self.DigitalIdPropertyLinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PropertyInfo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DigitalIdPropertyLinks">
+        <PropertyRef Name="FK_PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DigitalIdPropertyLink_1">
+    <End Role="DigitalIds" Type="Self.DigitalIds" Multiplicity="1" />
+    <End Role="DigitalIdPropertyLinks" Type="Self.DigitalIdPropertyLinks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DigitalIds">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="DigitalIdPropertyLinks">
+        <PropertyRef Name="FK_DigitalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Documents_0">
+    <End Role="Applications" Type="Self.Applications" Multiplicity="1" />
+    <End Role="Documents" Type="Self.Documents" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Applications">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Documents">
+        <PropertyRef Name="FK_ApplicationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="broders_dbModelStoreContainer">
+    <EntitySet Name="ApplicationHistory" EntityType="Self.ApplicationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Applications" EntityType="Self.Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ApplicationStatus" EntityType="Self.ApplicationStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustomerInfo" EntityType="Self.CustomerInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DigitalIdPropertyLinks" EntityType="Self.DigitalIdPropertyLinks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DigitalIds" EntityType="Self.DigitalIds" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documents" EntityType="Self.Documents" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropertyInfo" EntityType="Self.PropertyInfo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Application_0" Association="Self.FK_Application_0">
+      <End Role="CustomerInfo" EntitySet="CustomerInfo" />
+      <End Role="Applications" EntitySet="Applications" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationHistory_0" Association="Self.FK_ApplicationHistory_0">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="ApplicationHistory" EntitySet="ApplicationHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ApplicationHistory_1" Association="Self.FK_ApplicationHistory_1">
+      <End Role="ApplicationStatus" EntitySet="ApplicationStatus" />
+      <End Role="ApplicationHistory" EntitySet="ApplicationHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CustomerInfo_0" Association="Self.FK_CustomerInfo_0">
+      <End Role="DigitalIds" EntitySet="DigitalIds" />
+      <End Role="CustomerInfo" EntitySet="CustomerInfo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DigitalIdPropertyLink_0" Association="Self.FK_DigitalIdPropertyLink_0">
+      <End Role="PropertyInfo" EntitySet="PropertyInfo" />
+      <End Role="DigitalIdPropertyLinks" EntitySet="DigitalIdPropertyLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DigitalIdPropertyLink_1" Association="Self.FK_DigitalIdPropertyLink_1">
+      <End Role="DigitalIds" EntitySet="DigitalIds" />
+      <End Role="DigitalIdPropertyLinks" EntitySet="DigitalIdPropertyLinks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Documents_0" Association="Self.FK_Documents_0">
+      <End Role="Applications" EntitySet="Applications" />
+      <End Role="Documents" EntitySet="Documents" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

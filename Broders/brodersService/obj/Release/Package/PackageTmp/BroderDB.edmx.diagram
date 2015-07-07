@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="dd37e0a29f6a49d5932bf851277e22c6" Name="Diagram1">
+        <EntityTypeShape EntityType="broders_dbModel.ApplicationHistory" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="broders_dbModel.Applications" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="broders_dbModel.ApplicationStatus" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="broders_dbModel.CustomerInfo" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="broders_dbModel.DigitalIdPropertyLinks" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="broders_dbModel.DigitalIds" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="broders_dbModel.Documents" Width="1.5" PointX="7.5" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="broders_dbModel.PropertyInfo" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <AssociationConnector Association="broders_dbModel.FK_ApplicationHistory_0" ManuallyRouted="false" />
+        <AssociationConnector Association="broders_dbModel.FK_ApplicationHistory_1" ManuallyRouted="false" />
+        <AssociationConnector Association="broders_dbModel.FK_Application_0" ManuallyRouted="false" />
+        <AssociationConnector Association="broders_dbModel.FK_Documents_0" ManuallyRouted="false" />
+        <AssociationConnector Association="broders_dbModel.FK_CustomerInfo_0" ManuallyRouted="false" />
+        <AssociationConnector Association="broders_dbModel.FK_DigitalIdPropertyLink_0" ManuallyRouted="false" />
+        <AssociationConnector Association="broders_dbModel.FK_DigitalIdPropertyLink_1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

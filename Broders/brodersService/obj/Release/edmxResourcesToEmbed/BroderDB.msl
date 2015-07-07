@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="broders_dbModelStoreContainer" CdmEntityContainer="broders_dbEntities">
+    <EntitySetMapping Name="ApplicationHistory">
+      <EntityTypeMapping TypeName="broders_dbModel.ApplicationHistory">
+        <MappingFragment StoreEntitySet="ApplicationHistory">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_ApplicationID" ColumnName="FK_ApplicationID" />
+          <ScalarProperty Name="FK_StatusID" ColumnName="FK_StatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Applications">
+      <EntityTypeMapping TypeName="broders_dbModel.Applications">
+        <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_CustomerID" ColumnName="FK_CustomerID" />
+          <ScalarProperty Name="Deed" ColumnName="Deed" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PurchasePrice" ColumnName="PurchasePrice" />
+          <ScalarProperty Name="DepositAmount" ColumnName="DepositAmount" />
+          <ScalarProperty Name="LoanAmount" ColumnName="LoanAmount" />
+          <ScalarProperty Name="OccupationalDate" ColumnName="OccupationalDate" />
+          <ScalarProperty Name="OccupationalRent" ColumnName="OccupationalRent" />
+          <ScalarProperty Name="OTPExpiryDate" ColumnName="OTPExpiryDate" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationStatus">
+      <EntityTypeMapping TypeName="broders_dbModel.ApplicationStatus">
+        <MappingFragment StoreEntitySet="ApplicationStatus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerInfo">
+      <EntityTypeMapping TypeName="broders_dbModel.CustomerInfo">
+        <MappingFragment StoreEntitySet="CustomerInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_DigitalId" ColumnName="FK_DigitalId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="IsSBCustomer" ColumnName="IsSBCustomer" />
+          <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+          <ScalarProperty Name="TotalExpenses" ColumnName="TotalExpenses" />
+          <ScalarProperty Name="IDNumber" ColumnName="IDNumber" />
+          <ScalarProperty Name="IncomeTaxNumber" ColumnName="IncomeTaxNumber" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Cellnumber" ColumnName="Cellnumber" />
+          <ScalarProperty Name="Relationship" ColumnName="Relationship" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DigitalIdPropertyLinks">
+      <EntityTypeMapping TypeName="broders_dbModel.DigitalIdPropertyLinks">
+        <MappingFragment StoreEntitySet="DigitalIdPropertyLinks">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_PropertyId" ColumnName="FK_PropertyId" />
+          <ScalarProperty Name="FK_DigitalId" ColumnName="FK_DigitalId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DigitalIds">
+      <EntityTypeMapping TypeName="broders_dbModel.DigitalIds">
+        <MappingFragment StoreEntitySet="DigitalIds">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="broders_dbModel.Documents">
+        <MappingFragment StoreEntitySet="Documents">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FK_ApplicationID" ColumnName="FK_ApplicationID" />
+          <ScalarProperty Name="DocumentData" ColumnName="DocumentData" />
+          <ScalarProperty Name="DocumentTitle" ColumnName="DocumentTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropertyInfo">
+      <EntityTypeMapping TypeName="broders_dbModel.PropertyInfo">
+        <MappingFragment StoreEntitySet="PropertyInfo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="Suburb" ColumnName="Suburb" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="Province" ColumnName="Province" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="GpsCoords" ColumnName="GpsCoords" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

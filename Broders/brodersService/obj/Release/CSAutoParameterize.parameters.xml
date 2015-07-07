@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="MS_TableConnectionString-Web.config Connection String" description="MS_TableConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=(localdb)\v11.0;AttachDbFilename=|DataDirectory|\aspnet-brodersService-20150706034222.mdf;Initial Catalog=aspnet-brodersService-20150706034222;Integrated Security=True;MultipleActiveResultSets=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\codejam\\Broders\\brodersService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MS_TableConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="MS_NotificationHubConnectionString-Web.config Connection String" description="MS_NotificationHubConnectionString Connection String used in web.config by the application to access the database." defaultValue="Endpoint=sb://[your namespace].servicebus.windows.net;SharedSecretIssuer=owner;SharedSecretValue=[your secret]" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\codejam\\Broders\\brodersService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='MS_NotificationHubConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="broders_dbEntities-Web.config Connection String" description="broders_dbEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/BroderDB.csdl|res://*/BroderDB.ssdl|res://*/BroderDB.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=pqfqmzmdf9.database.windows.net;initial catalog=broders_db;persist security info=True;user id=bro;password=R@7finks;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Projects\\codejam\\Broders\\brodersService\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='broders_dbEntities']/@connectionString" />
+  </parameter>
+</parameters>

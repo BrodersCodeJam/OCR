@@ -18,7 +18,8 @@ namespace OcrParseTests
 
 
 
-            TextToParse = File.ReadAllText(@"../../Standard OTP.txt");
+            //TextToParse = File.ReadAllText(@"../../Standard; OTP.txt");
+            TextToParse = OcredDataFromABBYY.RealOcredData;
             OcrParser = new OCRParser();
 
             //var result = ocrParser.GetPropertyInfo(text);

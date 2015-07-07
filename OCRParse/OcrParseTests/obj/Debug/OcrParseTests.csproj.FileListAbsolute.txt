@@ -1,0 +1,7 @@
+C:\Projects\codejam\OCR\OCRParse\OcrParseTests\bin\Debug\OcrParseTests.dll
+C:\Projects\codejam\OCR\OCRParse\OcrParseTests\bin\Debug\OcrParseTests.pdb
+C:\Projects\codejam\OCR\OCRParse\OcrParseTests\obj\Debug\OcrParseTests.csprojResolveAssemblyReference.cache
+C:\Projects\codejam\OCR\OCRParse\OcrParseTests\obj\Debug\OcrParseTests.dll
+C:\Projects\codejam\OCR\OCRParse\OcrParseTests\obj\Debug\OcrParseTests.pdb
+C:\Projects\codejam\OCR\OCRParse\OcrParseTests\bin\Debug\OCRParse.dll
+C:\Projects\codejam\OCR\OCRParse\OcrParseTests\bin\Debug\OCRParse.pdb

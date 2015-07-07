@@ -1,0 +1,4 @@
+C:\Projects\codejam\OCR\OCRParse\OCRParse\bin\Debug\OCRParse.dll
+C:\Projects\codejam\OCR\OCRParse\OCRParse\bin\Debug\OCRParse.pdb
+C:\Projects\codejam\OCR\OCRParse\OCRParse\obj\Debug\OCRParse.dll
+C:\Projects\codejam\OCR\OCRParse\OCRParse\obj\Debug\OCRParse.pdb
